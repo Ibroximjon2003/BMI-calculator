@@ -21,9 +21,9 @@ class InputPage extends StatefulWidget {
 
 class _InputPageState extends State<InputPage> {
   Gender? selectedColor;
-  int height = 180;
-  int weight = 50;
-  int age = 60;
+  int height = 170;
+  int weight = 60;
+  int age = 25;
 
   @override
   Widget build(BuildContext context) {
@@ -108,18 +108,20 @@ class _InputPageState extends State<InputPage> {
                       overlayShape:
                           RoundSliderOverlayShape(overlayRadius: 30.0),
                     ),
-                    child: Slider(
-                      value: height.toDouble(),
-                      min: 120,
-                      max: 220,
-                      activeColor: Colors.white,
-                      thumbColor: Colors.pink,
-                      inactiveColor: Colors.grey,
-                      onChanged: ((value) {
-                        setState(() {
-                          height = value.round();
-                        });
-                      }),
+                    child: Expanded(
+                      child: Slider(
+                        value: height.toDouble(),
+                        min: 120,
+                        max: 220,
+                        activeColor: Colors.white,
+                        thumbColor: Colors.pink,
+                        inactiveColor: Colors.grey,
+                        onChanged: ((value) {
+                          setState(() {
+                            height = value.round();
+                          });
+                        }),
+                      ),
                     ),
                   )
                 ],

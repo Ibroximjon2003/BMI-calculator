@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'bottom_button.dart';
+
 import 'constants.dart';
 
 class BottomButton extends StatelessWidget {
-  BottomButton({required this.onTap, required this.buttonTitle});
+  const BottomButton(
+      {super.key, required this.onTap, required this.buttonTitle});
   final VoidCallback onTap;
   final String buttonTitle;
 
@@ -12,6 +13,7 @@ class BottomButton extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
+        // ignore: sort_child_properties_last
         child: Center(
           child: Text(
             buttonTitle,
